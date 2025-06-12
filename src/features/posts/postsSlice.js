@@ -33,16 +33,25 @@ const postsSlice = createSlice({
                 likes: 0,
                 comments: 0,
             }
+            state.forEach(post2 => console.log(post2))
             state.push(newPosts);
         },
         updatePost: (state, action) => {
+
             const index = state.findIndex((post) => post.id === action.payload.id);
             state[index] = action.payload;
+
+        },
+
+        deletePost: (state, action) => {
+            const updatedPosts = state.filter(post => post.id !== action.payload.id);
+            return (updatedPosts)
+
 
         }
     }
 });
 
-export const { createPost, updatePost } = postsSlice.actions;
+export const { createPost, updatePost, deletePost } = postsSlice.actions;
 
 export default postsSlice.reducer;
