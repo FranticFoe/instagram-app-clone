@@ -6,7 +6,7 @@ import { PROFILE_DATA } from "./data";
 import ImageGrid from "./components/ImageGrid";
 import AddPostModal from "./components/AddPostModel";
 import { useState } from "react";
-
+import './index.css'
 
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
   const closeModal = () => setShowModal(false);
   return (
     <ProfileContext.Provider value={PROFILE_DATA}>
-      <Row>
+      <Row className="x">
         <Col
           sm={1}
           className="d-flex flex-column justify-content-start align-items-centre vh-100 bg-light"
